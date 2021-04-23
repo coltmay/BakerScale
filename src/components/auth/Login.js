@@ -1,16 +1,22 @@
-import React, { useRef } from "react"
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom"
-import "./Login.css"
+import React, { useRef, useState } from "react"
+import { Link, useHistory } from "react-router-dom";
 
+export const Login = () => {
+    const [loginUser, setLoginUser] = useState({ email: "" })
+    const [existDialog, setExistDialog] = useState(false)
 
-export const Login = ({setAuthUser}) => {
-    const email = useRef()
-    const existDialog = useRef()
     const history = useHistory()
 
+    const handleInputChange = (event) => {
+        const newUser = { ...loginUser }
+        newUser[event.target.id] = event.target.value
+        setLoginUser(newUser)
+    }
+
+
     const existingUserCheck = () => {
-        return fetch(`http://localhost:5002/customers?email=${email.current.value}`)
+        // If your json-server URL is different, please change it below!
+        return fetch(`http://localhost:5002/users?email=${loginUser.email}`)
             .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
@@ -21,44 +27,50 @@ export const Login = ({setAuthUser}) => {
         existingUserCheck()
             .then(exists => {
                 if (exists) {
-                    setAuthUser(exists)
+                    // The user id is saved under the key baking_user in session Storage. Change below if needed!
+                    sessionStorage.setItem("baking_user", exists.id)
                     history.push("/")
                 } else {
-                    existDialog.current.showModal()
+                    setExistDialog(true)
                 }
             })
     }
 
     return (
-        <main className="container--login">
-            <dialog className="dialog dialog--auth" ref={existDialog}>
+        <>
+            <dialog className="" open={existDialog}>
                 <div>User does not exist</div>
-                <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
+                <button className=""
+                    onClick={e => setExistDialog(false)}>
+                    Close
+                </button>
             </dialog>
-
             <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nashville Kennels</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email"
-                            id="email"
-                            className="form-control"
-                            placeholder="Email address"
-                            required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <button type="submit">
-                            Sign in
-                        </button>
-                    </fieldset>
+                <form className="" onSubmit={handleLogin}>
+                    <label htmlFor="inputEmail">Email</label>
+                    <input type="email"
+                        id="email"
+                        className=""
+                        placeholder=""
+                        required autoFocus
+                        value={loginUser.email}
+                        onChange={handleInputChange} />
+                    {/* <label htmlFor="inputPassword">Password</label>
+                    <input type="password"
+                        id="password"
+                        className=""
+                        placeholder=""
+                        required autoFocus
+                        value={loginUser.password}
+                        onChange={handleInputChange} /> */}
+
+                    <button type="submit">Sign in</button>
                 </form>
             </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+            <section className="">
+                <p>Not already a user?</p>
+                <Link to="/register">Register Here</Link>
             </section>
-        </main>
+        </>
     )
 }
-

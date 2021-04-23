@@ -1,16 +1,14 @@
 import React, { useRef } from "react"
-import { useHistory } from "react-router-dom"
-import "./Login.css"
+import { Link, useHistory } from "react-router-dom";
 
-export const Register = ({setAuthUser}) => {
+export const Register = ({ setAuthUser }) => {
     const firstName = useRef()
-    const lastName = useRef()
     const email = useRef()
     const conflictDialog = useRef()
     const history = useHistory()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:5002/customers?email=${email.current.value}`)
+        return fetch(`http://localhost:5002/users?email=${email.current.value}`)
             .then(res => res.json())
             .then(user => !!user.length)
     }
@@ -22,14 +20,14 @@ export const Register = ({setAuthUser}) => {
         existingUserCheck()
             .then((userExists) => {
                 if (!userExists) {
-                    fetch("http://localhost:5002/customers", {
+                    fetch("http://localhost:5002/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
                             email: email.current.value,
-                            name: `${firstName.current.value} ${lastName.current.value}`
+                            name: firstName.current.value
                         })
                     })
                         .then(res => res.json())
@@ -44,34 +42,27 @@ export const Register = ({setAuthUser}) => {
                     conflictDialog.current.showModal()
                 }
             })
-        
+
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main>
 
-            <dialog className="dialog dialog--password" ref={conflictDialog}>
+            <dialog className="" ref={conflictDialog}>
                 <div>Account with that email address already exists</div>
-                <button className="button--close" onClick={e => conflictDialog.current.close()}>Close</button>
+                <button className="" onClick={e => conflictDialog.current.close()}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for NSS Kennels</h1>
-                <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
-                </fieldset>
-                <fieldset>
-                    <button type="submit"> Sign in </button>
-                </fieldset>
+            <form className="" onSubmit={handleRegister}>
+                <label htmlFor="">Name</label>
+                <input ref={firstName} type="text" name="firstName" className="" required autoFocus />
+                <label htmlFor="inputEmail"> Email address </label>
+                <input ref={email} type="email" name="email" className="" required />
+                <button type="submit"> Sign in </button>
+                <section className="">
+                    <p>Existing User?</p>
+                    <Link to="/login">Sign in Here</Link>
+                </section>
             </form>
         </main>
     )
