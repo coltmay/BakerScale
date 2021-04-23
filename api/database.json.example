@@ -1,0 +1,35 @@
+{
+    "users": [],
+    "recipes": [],
+    "recipeIngredients": [],
+    "ingredients": [
+        {
+            "id" : 1,
+            "name" : "All-Purpose Flour",
+            "teaspoonToGram" : 2.6,
+            "tablespoonToGram" : 9,
+            "cupToGram": 120
+        },
+        {
+            "id" : 2,
+            "name" : "Kosher Salt",
+            "teaspoonToGram" : 6,
+            "tablespoonToGram" : 17,
+            "cupToGram": 288
+        }
+    ],
+    "measurements" : [
+        {
+            "id" : 1,
+            "name" : "cups"
+        },
+        {
+            "id" : 2,
+            "name" : "tablespoons"
+        },
+        {
+            "id" : 3,
+            "name" : "teaspoons"
+        }
+    ]
+}
