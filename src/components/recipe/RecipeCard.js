@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import { getCurrentUser } from "../../components/helper/helperFunctions"
 import editIcon from "../../images/editIcon.png";
 import deleteIcon from "../../images/deleteIcon.png";
 
