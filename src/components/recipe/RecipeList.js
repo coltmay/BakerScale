@@ -13,7 +13,10 @@ export const RecipeList = () => {
     // A function to get the recipes.
     const getRecipes = () => {
         return getAllRecipes().then(recipesFromAPI => {
-                setRecipes(recipesFromAPI);
+            recipesFromAPI.sort((recipeA, recipeB) => {
+                return recipeB.timestamp - recipeA.timestamp
+            })
+            setRecipes(recipesFromAPI);
             });
     };
 
