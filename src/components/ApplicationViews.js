@@ -1,9 +1,10 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { LandingPage } from "../components/Landing";
-import { Login } from "./auth/Login";
-import { Register } from "./auth/Register";
 import { RecipeList } from "./recipe/RecipeList";
+import { RecipeForm } from "./recipe/RecipeForm";
+import { Register } from "./auth/Register";
+import { Login } from "./auth/Login";
 
 export const ApplicationViews = () => {
     return (
@@ -14,6 +15,10 @@ export const ApplicationViews = () => {
 
             <Route exact path="/recipes">
                 <RecipeList/>
+            </Route>
+
+            <Route path="/recipes/add">
+                <RecipeForm/>
             </Route>
 
             <Route path="/login">
