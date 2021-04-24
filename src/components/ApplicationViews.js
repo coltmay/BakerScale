@@ -26,6 +26,10 @@ export const ApplicationViews = () => {
                 <ConversionList/>
             </Route>
 
+            <Route path="/search">
+                {/* <SearchList/> */}
+            </Route>
+
             <Route path="/login">
                 <Login/>
             </Route>
