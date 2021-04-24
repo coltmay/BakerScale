@@ -4,7 +4,7 @@ import { getCurrentUser } from "../../components/helper/helperFunctions"
 import editIcon from "../../images/editIcon.png";
 import deleteIcon from "../../images/deleteIcon.png";
 
-export const RecipeCard = ({ recipe }) => {
+export const RecipeCard = ({ recipe, deleteAndSetRecipes }) => {
 
         return (
                 <section className="">
@@ -12,11 +12,13 @@ export const RecipeCard = ({ recipe }) => {
                         <p>{recipe.blurb}</p>
                         <Link to={`/recipes/${recipe.id}/edit`}>
                                 <img className=""
-                                        src={editIcon}/>
+                                        src={editIcon} />
                         </Link>
-                        <img className=""
-                                src={deleteIcon}
-                                onClick={null} />
+                        <a href=''>
+                                <img className=""
+                                        src={deleteIcon}
+                                        onClick={(() => deleteAndSetRecipes(recipe.id))} />
+                        </a>
                 </section>
         )
 }
