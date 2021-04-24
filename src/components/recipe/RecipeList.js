@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { RecipeCard } from './RecipeCard'
-import { getAllRecipes } from '../../modules/RecipeManager'
+import { getAllRecipes, deleteRecipes } from '../../modules/RecipeManager'
 
 // A function to return recipes in a list format.
 export const RecipeList = () => {
@@ -20,6 +20,11 @@ export const RecipeList = () => {
             });
     };
 
+    const deleteAndSetRecipes = (id) => {
+        deleteRecipes(id)
+            .then(() => getRecipes())
+    }
+
     // A useEffect invoke getRecipes
     useEffect(() => {
         getRecipes();
@@ -33,6 +38,7 @@ export const RecipeList = () => {
             {recipes.map(recipe => <RecipeCard
                                     key={recipe.id}
                                     recipe={recipe}
+                                    deleteAndSetRecipes={deleteAndSetRecipes}
             />)}
         </>
     )
