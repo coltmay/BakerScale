@@ -8,6 +8,7 @@ import { Login } from "./auth/Login";
 import { ConversionList } from "./conversion/ConversionList";
 import { SearchList } from "./search/SearchList";
 import { RecipeDetail } from "./recipe/RecipeDetail";
+import { RecipeEdit } from "./recipe/RecipeEdit";
 
 export const ApplicationViews = () => {
     return (
@@ -20,12 +21,16 @@ export const ApplicationViews = () => {
                 <RecipeList/>
             </Route>
 
-            <Route path="/recipes/:recipeId(\d+)">
+            <Route exact path="/recipes/:recipeId(\d+)">
                 <RecipeDetail/>
             </Route>
 
             <Route path="/recipes/add">
                 <RecipeForm/>
+            </Route>
+
+            <Route path="/recipes/:recipeId(\d+)/edit">
+                <RecipeEdit/>
             </Route>
 
             <Route path="/conversions">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { RecipeCard } from './RecipeCard'
-import { getAllRecipes, deleteRecipes } from '../../modules/RecipeManager'
+import { getAllRecipes, deleteRecipe } from '../../modules/RecipeManager'
 
 // A function to return recipes in a list format.
 export const RecipeList = () => {
@@ -21,7 +21,7 @@ export const RecipeList = () => {
     };
 
     const deleteAndSetRecipes = (id) => {
-        deleteRecipes(id)
+        deleteRecipe(id)
             .then(() => getRecipes())
     }
 
