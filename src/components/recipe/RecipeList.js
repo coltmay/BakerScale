@@ -9,8 +9,7 @@ export const RecipeList = () => {
 
     // A function to get the recipes.
     const getRecipes = () => {
-        return getAllRecipes()
-            .then(recipesFromAPI => {
+        return getAllRecipes().then(recipesFromAPI => {
                 setRecipes(recipesFromAPI);
             });
     };
@@ -21,11 +20,11 @@ export const RecipeList = () => {
     }, []);
 
     return (
-        <div>
+        <>
             {recipes.map(recipe => <RecipeCard
-                                    key={}
+                                    key={recipe.id}
                                     recipe={recipe}
             />)}
-        </div>
+        </>
     )
 };

@@ -1,5 +1,5 @@
 import React from "react"
 
-export const EmployeeCard = ({ recipe }) => (
+export const RecipeCard = ({ recipe }) => (
         <h3>{recipe.name}</h3>
 )

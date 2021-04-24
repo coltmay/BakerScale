@@ -9,7 +9,7 @@ export const NavBar = () => {
                     <Link className="" to="/">L O G O</Link>
                 </li>
                 <li className="">
-                    <Link className="" to="/recipies">R E C I P I E S</Link>
+                    <Link className="" to="/recipes">R E C I P E S</Link>
                 </li>
                 <li className="">
                     <Link className="" to="/conversions">C O N V E R S I O N S</Link>
