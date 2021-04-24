@@ -21,6 +21,7 @@ export const RecipeList = () => {
 
     return (
         <>
+            <button>Add Recipe</button>
             {recipes.map(recipe => <RecipeCard
                                     key={recipe.id}
                                     recipe={recipe}
