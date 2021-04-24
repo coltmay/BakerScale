@@ -10,8 +10,18 @@ export const getRecipeById = (id) => {
         .then(res => res.json())
 }
 
-export const deleteRecipes = (id) => {
+export const deleteRecipe = (id) => {
     return fetch(`${remoteURL}/recipes/${id}`, {
         method: "DELETE"
+    }).then(result => result.json())
+}
+
+export const updateRecipe = (editedRecipe) => {
+    return fetch(`${remoteURL}/recipes/${editedRecipe.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(editedRecipe)
     }).then(result => result.json())
 }
