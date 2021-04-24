@@ -5,11 +5,12 @@ import editIcon from "../../images/editIcon.png";
 import deleteIcon from "../../images/deleteIcon.png";
 
 export const RecipeCard = ({ recipe, deleteAndSetRecipes }) => {
-
         return (
                 <section className="">
-                        <h3>{recipe.title}</h3>
-                        <p>{recipe.blurb}</p>
+                        <Link to={`/recipes/${recipe.id}`}>
+                        <h3 className="">{recipe.title}</h3>
+                        </Link>
+                        <p className="">{recipe.blurb}</p>
                         <Link to={`/recipes/${recipe.id}/edit`}>
                                 <img className=""
                                         src={editIcon} />
