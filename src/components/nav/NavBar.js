@@ -37,7 +37,8 @@ export const NavBar = () => {
                 <li className="">
                     <input  className=""
                             onChange={searchText}
-                            onKeyPress={keyPress} />
+                            onKeyPress={keyPress}
+                            />
                 </li>
                 <li className="">
                     <Link className="" to="/login">L O G I N</Link>
