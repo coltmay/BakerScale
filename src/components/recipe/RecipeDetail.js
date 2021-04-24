@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom'
-import { getRecipeById } from '../../modules/RecipeManager'
+import { deleteRecipe, getRecipeById } from '../../modules/RecipeManager'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
 
@@ -9,6 +9,12 @@ export const RecipeDetail = () => {
     const { recipeId } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const history = useHistory();
+
+    const handleDelete = () => {
+        setIsLoading(true)
+        deleteRecipe(recipeId)
+            .then(history.push("/recipes"))
+    }
 
     useEffect(() => {
         getRecipeById(recipeId)
@@ -31,7 +37,7 @@ export const RecipeDetail = () => {
                 <a href=''>
                     <img className=""
                         src={deleteIcon}
-                        onClick={null} />
+                        onClick={handleDelete} />
                 </a>
                 <p>{recipe.blurb}</p>
             </section>
