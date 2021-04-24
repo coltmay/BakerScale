@@ -5,6 +5,7 @@ import { RecipeList } from "./recipe/RecipeList";
 import { RecipeForm } from "./recipe/RecipeForm";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
+import { ConversionList } from "./conversion/ConversionList";
 
 export const ApplicationViews = () => {
     return (
@@ -19,6 +20,10 @@ export const ApplicationViews = () => {
 
             <Route path="/recipes/add">
                 <RecipeForm/>
+            </Route>
+
+            <Route path="/conversions">
+                <ConversionList/>
             </Route>
 
             <Route path="/login">
