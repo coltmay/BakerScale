@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { RecipeCard } from './RecipeCard'
 import { getAllRecipes } from '../../modules/RecipeManager'
 
@@ -6,6 +7,8 @@ import { getAllRecipes } from '../../modules/RecipeManager'
 export const RecipeList = () => {
     // Declaring recipes as a state variable.
     const [recipes, setRecipes] = useState([]);
+    // Using history to manipulate stack
+    const history = useHistory();
 
     // A function to get the recipes.
     const getRecipes = () => {
@@ -21,7 +24,9 @@ export const RecipeList = () => {
 
     return (
         <>
-            <button>Add Recipe</button>
+            <button className=""
+                    onClick={() => history.push("/recipes/add")}
+            >Add Recipe</button>
             {recipes.map(recipe => <RecipeCard
                                     key={recipe.id}
                                     recipe={recipe}
