@@ -5,6 +5,11 @@ export const getAllRecipes = () => {
         .then(res => res.json())
 }
 
+export const getRecipeById = (id) => {
+    return fetch(`${remoteURL}/recipes/${id}?_expand=user`)
+        .then(res => res.json())
+}
+
 export const deleteRecipes = (id) => {
     return fetch(`${remoteURL}/recipes/${id}`, {
         method: "DELETE"

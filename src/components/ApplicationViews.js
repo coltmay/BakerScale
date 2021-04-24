@@ -7,6 +7,7 @@ import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
 import { ConversionList } from "./conversion/ConversionList";
 import { SearchList } from "./search/SearchList";
+import { RecipeDetail } from "./recipe/RecipeDetail";
 
 export const ApplicationViews = () => {
     return (
@@ -17,6 +18,10 @@ export const ApplicationViews = () => {
 
             <Route exact path="/recipes">
                 <RecipeList/>
+            </Route>
+
+            <Route path="/recipes/:recipeId(\d+)">
+                <RecipeDetail/>
             </Route>
 
             <Route path="/recipes/add">
