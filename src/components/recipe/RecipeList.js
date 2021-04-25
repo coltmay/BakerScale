@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { RecipeCard } from './RecipeCard'
 import { getAllRecipes, deleteRecipe } from '../../modules/RecipeManager'
+import './RecipeList.css'
 
 // A function to return recipes in a list format.
 export const RecipeList = () => {
@@ -17,7 +18,7 @@ export const RecipeList = () => {
                 return recipeB.timestamp - recipeA.timestamp
             })
             setRecipes(recipesFromAPI);
-            });
+        });
     };
 
     const deleteAndSetRecipes = (id) => {
@@ -31,15 +32,21 @@ export const RecipeList = () => {
     }, []);
 
     return (
-        <>
-            <button className=""
-                    onClick={() => history.push("/recipes/add")}
-            >Add Recipe</button>
-            {recipes.map(recipe => <RecipeCard
-                                    key={recipe.id}
-                                    recipe={recipe}
-                                    deleteAndSetRecipes={deleteAndSetRecipes}
-            />)}
-        </>
+        <section className="recipeListBackgroundWrapper">
+            <div className="transparentWhite">
+                <div className="listSection">
+                    <div className="addRecipeToListBin">
+                        <button className="addRecipeToList"
+                            onClick={() => history.push("/recipes/add")}
+                        >Add Recipe</button>
+                    </div>
+                    {recipes.map(recipe => <RecipeCard
+                        key={recipe.id}
+                        recipe={recipe}
+                        deleteAndSetRecipes={deleteAndSetRecipes}
+                    />)}
+                </div>
+            </div>
+        </section>
     )
 };
