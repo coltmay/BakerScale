@@ -5,7 +5,8 @@
 
 nav {
     height: 90px;
-    background-color: #3A1C17;
+    background: rgb(27,13,10);
+    background: linear-gradient(0deg, rgba(27,13,10,1) 0%, rgba(58,28,23,1) 12%, rgba(58,28,23,1) 100%);
     display: flex;
 }
 
@@ -43,11 +44,12 @@ ul {
 }
 
 .search {
-    height: 30px;
+    height: 35px;
     color: #3A1C17;
     font-size: 16px;
     border-radius: 15px;
     outline: none;
+    border: none;
     outline-style: none;
     padding-left: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
