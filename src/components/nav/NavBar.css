@@ -48,6 +48,7 @@ ul {
     color: #3A1C17;
     font-size: 16px;
     border-radius: 15px;
+    caret-color: transparent;
     outline: none;
     border: none;
     outline-style: none;
