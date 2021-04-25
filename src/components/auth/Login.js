@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom";
+import './Login.css'
 
 export const Login = () => {
     const [loginUser, setLoginUser] = useState({ email: "" })
@@ -37,7 +38,7 @@ export const Login = () => {
     }
 
     return (
-        <>
+        <section className="loginPage">
             <dialog className="" open={existDialog}>
                 <div>User does not exist</div>
                 <button className=""
@@ -45,7 +46,8 @@ export const Login = () => {
                     Close
                 </button>
             </dialog>
-            <section>
+            <div className="grabImage"></div>
+            <section className="loginFormBin">
                 <form className="" onSubmit={handleLogin}>
                     <label htmlFor="inputEmail">Email</label>
                     <input type="email"
@@ -63,14 +65,13 @@ export const Login = () => {
                         required autoFocus
                         value={loginUser.password}
                         onChange={handleInputChange} /> */}
-
                     <button type="submit">Sign in</button>
                 </form>
+                <section className="">
+                    <p>Not already a user?</p>
+                    <Link to="/register">Register Here</Link>
+                </section>
             </section>
-            <section className="">
-                <p>Not already a user?</p>
-                <Link to="/register">Register Here</Link>
-            </section>
-        </>
+        </section>
     )
 }

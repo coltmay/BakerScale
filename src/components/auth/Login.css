@@ -1,4 +1,32 @@
-.h1, h1 {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.loginPage {
+    display: flex;
+    height: 90vh;
+}
+
+.grabImage {
+    background-image: url(../../images/login-register-rodolfo-marques.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    display: flex;
+    width: 41.25%;
+    height: 100%;
+}
+
+.loginFormBin {
+    display: flex;
+    flex-grow: inherit;
+    width: 58.75%;
+}
+
+/* Old Code */
+
+/* .h1, h1 {
     font-size: 2.5rem;
 }
 
@@ -65,4 +93,4 @@ fieldset {
     min-width: 15rem;
     min-height: 5rem;
 }
-
+ */
