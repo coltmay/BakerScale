@@ -4,9 +4,8 @@ import { Link } from "react-router-dom"
 import './Landing.css'
 
 export const LandingPage = () => (
-    <body className="page">
-        <div className="overlay" />
-
+    <body className="landingPage">
+        <div className="landingOverlay" />
         <section className="hook">
             <div className="titleGroup">
                 <h1 className="hookHeader"
