@@ -4,8 +4,9 @@
 }
 
 .loginPage {
+    background-color: #D5CABB;
     display: flex;
-    height: 90vh;
+    height: 90.85vh;
 }
 
 .grabImage {
@@ -18,10 +19,53 @@
     height: 100%;
 }
 
+.grabImage h2 {
+    font-family: 'Beth Ellen', cursive;
+    color: #CFCFCF;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+    padding: 2em;
+    margin-top: 37%;
+}
+
+.grabImage p {
+    font-family: 'EB Garamond', serif;
+    color: #CFCFCF;
+    font-size: 24px;
+    text-align: right;
+    padding-right: 2.3em;
+}
+
 .loginFormBin {
     display: flex;
     flex-grow: inherit;
     width: 58.75%;
+
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.loginForm {
+    padding-top: 15em;
+    margin-left: 15em;
+    margin-right: 15em;
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.loginForm label {
+    text-align: start;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.loginForm input {
+    height: 22px;
 }
 
 /* Old Code */

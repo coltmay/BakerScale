@@ -46,9 +46,12 @@ export const Login = () => {
                     Close
                 </button>
             </dialog>
-            <div className="grabImage"></div>
+            <div className="grabImage">
+                <h2>"If thou tastest a crust of bread, thou tastest all the stars and all the heavens."</h2>
+                <p>- Robert Browning</p>
+            </div>
             <section className="loginFormBin">
-                <form className="" onSubmit={handleLogin}>
+                <form className="loginForm" onSubmit={handleLogin}>
                     <label htmlFor="inputEmail">Email</label>
                     <input type="email"
                         id="email"
@@ -57,15 +60,8 @@ export const Login = () => {
                         required autoFocus
                         value={loginUser.email}
                         onChange={handleInputChange} />
-                    {/* <label htmlFor="inputPassword">Password</label>
-                    <input type="password"
-                        id="password"
-                        className=""
-                        placeholder=""
-                        required autoFocus
-                        value={loginUser.password}
-                        onChange={handleInputChange} /> */}
-                    <button type="submit">Sign in</button>
+                    <button className=""
+                        type="submit">Sign in</button>
                 </form>
                 <section className="">
                     <p>Not already a user?</p>
