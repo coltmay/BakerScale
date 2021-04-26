@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.recipeEditPage {
+    background-color: #D5CABB;
+    justify-content: center;
+    display: flex;
+    height: 90.85vh;
+}
+
+.recipeEditForm {
+    margin: 2em;
+    padding: 2em;
+    border: black solid 1px;
+    width: 60%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBox {
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBox label {
+    margin-bottom: 0.5em;
+}
+
+.titleBox input {
+    height: 22px;
+}
+
+.blurbBox {
+    padding-top: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.blurbBox label {
+    margin-bottom: 0.5em;
+}
+
+.blurbBox textarea {
+    resize: none;
+    height: 10em;
+}
+
+.conversionBox {
+    padding-top: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ingredientBox, .quantityBox, .measurementBox {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.conversionBox label {
+    margin-bottom: 0.5em;
+}
+
+.conversionBox input {
+    height: 22px;
+}
+
+.conversionBox select {
+    height: 27px;
+}
+
+.directionBox {
+    padding-top: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.directionBox label {
+    margin-bottom: 0.5em;
+}
+
+.directionBox textarea {
+    resize: none;
+    height: 10em;
+}
+
+.editButtonBox {
+    margin-top: auto;
+    padding-right: 2em;
+    align-self: flex-end;
+}
+
+.formCancelButton {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: #CFCFCF;
+    outline: none;
+    border: none;
+    background-color: #322017;
+    height: 60px;
+    width: 125px;
+}
+
+.formEditButton {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: #CFCFCF;
+    outline: none;
+    border: none;
+    background-color: #5A291A;
+    height: 60px;
+    width: 220px;
+    margin-left: 2em;
+}
