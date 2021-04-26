@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useParams, useHistory } from "react-router-dom"
 import { getRecipeById, updateRecipe } from "../../modules/RecipeManager"
 import { getCurrentUser } from '../helper/helperFunctions'
+import './RecipeEdit.css'
 
 export const RecipeEdit = () => {
     // ! ============================================================================== 
@@ -19,7 +20,7 @@ export const RecipeEdit = () => {
     const history = useHistory();
 
     const handleFieldChange = (event) => {
-        const stateToChange = {...recipe}
+        const stateToChange = { ...recipe }
         stateToChange[event.target.id] = event.target.value;
         setRecipe(stateToChange)
     }
@@ -52,58 +53,72 @@ export const RecipeEdit = () => {
     }, [])
 
     return (
-        <form>
-            <label htmlFor="inputTitle">Title</label>
-            <input className=""
-                type="title"
-                id="title"
-                required
-                value={recipe.title}
-                onChange={handleFieldChange} />
-            <label htmlFor="inputBlurb">Blurb</label>
-            <textarea className=""
-                type="blurb"
-                id="blurb"
-                required
-                value={recipe.blurb}
-                onChange={handleFieldChange} />
-            {/* //TODO Change this later!
+        <section className="recipeEditPage">
+            <form className="recipeEditForm">
+                <div className="titleBox">
+                    <label htmlFor="inputTitle">Title</label>
+                    <input className=""
+                        type="title"
+                        id="title"
+                        required
+                        value={recipe.title}
+                        onChange={handleFieldChange} />
+                </div>
+                <div className="blurbBox">
+                    <label htmlFor="inputBlurb">Blurb</label>
+                    <textarea className=""
+                        type="blurb"
+                        id="blurb"
+                        required
+                        value={recipe.blurb}
+                        onChange={handleFieldChange} />
+                </div>
+                {/* //TODO Change this later!
                 Refactor into something that can map? */}
-            <section>
-                <label htmlFor="inputIngredients">Ingredients</label>
-                <input className=""
-                    id="ingredients"
+                <section className="conversionBox">
+                    <div className="ingredientBox">
+                        <label htmlFor="inputIngredients">Ingredients</label>
+                        <input className=""
+                            id="ingredients"
+                            required
+                            value={null}
+                            onChange={null} />
+                    </div>
+                    <div className="quantityBox">
+                    <label htmlFor="inputQuantity">Quantity</label>
+                    <input className=""
+                        id="quantity"
+                        required
+                        value={null}
+                        onChange={null} />
+                        </div>
+                        <div className="measurementBox">
+                    <label htmlFor="inputMeasurement">Measurement</label>
+                    <select className=""
+                        id="measurement"
+                        required
+                        value={null}
+                        onChange={null} />
+                        </div>
+                </section>
+                <div className="directionBox">
+                <label htmlFor="inputDirections">Directions</label>
+                <textarea className=""
+                    type="directions"
+                    id="directions"
                     required
-                    value={null}
-                    onChange={null} />
-                <label htmlFor="inputQuantity">Quantity</label>
-                <input className=""
-                    id="quantity"
-                    required
-                    value={null}
-                    onChange={null} />
-                <label htmlFor="inputMeasurement">Measurement</label>
-                <select className=""
-                    id="measurement"
-                    required
-                    value={null}
-                    onChange={null} />
-            </section>
-            <label htmlFor="inputDirections">Directions</label>
-            <textarea className=""
-                type="directions"
-                id="directions"
-                required
-                value={recipe.directions}
-                onChange={handleFieldChange} />
-            <section>
-                <button className=""
-                    onClick={(() => history.push("/recipes"))}
-                >Cancel</button>
-                <button className=""
-                    onClick={updateExisitingRecipe}
-                >Update Recipe</button>
-            </section>
-        </form>
+                    value={recipe.directions}
+                    onChange={handleFieldChange} />
+                    </div>
+                    <section className="editButtonBox">
+                    <button className="formCancelButton"
+                        onClick={(() => history.push("/recipes"))}
+                    >Cancel</button>
+                    <button className="formEditButton"
+                        onClick={updateExisitingRecipe}
+                    >Update Recipe</button>
+                </section>
+            </form>
+        </section>
     )
 }
