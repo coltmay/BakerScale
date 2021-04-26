@@ -24,8 +24,8 @@ export const ConversionList = () => {
                     <input className="conversionInput" placeholder="change"></input>
                     <p>grams</p>
                 </div>
+                <div className="conversionIcons"></div>
             </section>
-            <button>+</button>
             <button>Add Measurement</button>
         </section>
     )
