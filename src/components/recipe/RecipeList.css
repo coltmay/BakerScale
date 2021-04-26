@@ -3,7 +3,7 @@
 .recipeListBackgroundWrapper {
     position: fixed;
     background-image: url(../../images/recipe-list-louise-lyshoj.jpg);
-    /* height: 90.85vh; */
+    height: 93vh;
     width: 100%;
     z-index: -1;
 }
@@ -11,7 +11,7 @@
 .listSection {
     display: flex;
     flex-direction: column;
-    /* height: 90.85vh; */
+    height: 93vh;
     background-color: #d6d0c7e5;
     margin-left: 30vh;
     margin-right: 30vh;
