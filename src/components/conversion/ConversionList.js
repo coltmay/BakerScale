@@ -37,7 +37,7 @@ export const ConversionList = () => {
                 </div>
             </section>
 
-            <button>Add Measurement</button>
+            <button className="conversionAddButton">Add Measurement</button>
         </section>
     )
 }
