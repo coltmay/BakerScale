@@ -14,10 +14,10 @@ export const RecipeList = () => {
     // A function to get the recipes.
     const getRecipes = () => {
         return getAllRecipes().then(recipesFromAPI => {
-            recipesFromAPI.sort((recipeA, recipeB) => {
-                return recipeB.timestamp - recipeA.timestamp
-            })
-            setRecipes(recipesFromAPI);
+            // recipesFromAPI.sort((recipeA, recipeB) => {
+            //     return recipeA.timestamp - recipeB.timestamp;
+            // })
+            setRecipes(recipesFromAPI.reverse());
         });
     };
 
