@@ -60,12 +60,12 @@ export const Login = () => {
                         required autoFocus
                         value={loginUser.email}
                         onChange={handleInputChange} />
-                    <button className=""
+                    <button className="loginSubmit"
                         type="submit">Sign in</button>
                 </form>
-                <section className="">
+                <section className="loginText">
                     <p>Not already a user?</p>
-                    <Link to="/register">Register Here</Link>
+                    <Link to="/register"><p className="loginRegisterRedirect">Register Here</p></Link>
                 </section>
             </section>
         </section>

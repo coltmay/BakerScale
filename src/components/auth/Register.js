@@ -59,6 +59,7 @@ export const Register = ({ setAuthUser }) => {
                 <form className="registerForm" onSubmit={handleRegister}>
                     <label htmlFor="inputFirstName">First Name</label>
                     <input ref={firstName}
+                        placeholder="This Javascript needs to be modified."
                         className=""
                         type="text"
                         name="firstName"
@@ -70,12 +71,12 @@ export const Register = ({ setAuthUser }) => {
                         type="email"
                         name="email"
                         required />
-                    <button className=""
+                    <button className="registerSubmit"
                         type="submit">Register</button>
                 </form>
-                <section className="">
+                <section className="registerText">
                     <p>Existing User?</p>
-                    <Link to="/login">Sign in Here</Link>
+                    <Link to="/login"><p className="registerLoginRedirect">Sign in Here</p></Link>
                 </section>
             </section>
         </section>
