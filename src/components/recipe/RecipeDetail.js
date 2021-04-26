@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { deleteRecipe, getRecipeById } from '../../modules/RecipeManager'
+import saveIcon from '../../images/saveIcon.png'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
 

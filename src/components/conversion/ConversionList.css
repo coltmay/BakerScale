@@ -34,8 +34,15 @@
 
 .conversionRow {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     margin-bottom: 2em;
+}
+
+.secondaryConversionRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 7em;
 }
 
 .conversionIngredient{
@@ -48,7 +55,6 @@
 }
 
 .conversionConversion{
-    margin-right: 23.5em;
     display: flex;
 }
 
@@ -69,4 +75,19 @@
 
 .conversionInput {
     margin-right: 2em;
+}
+
+.conversionRow {
+    display: flex;
+}
+
+.conversionIcons {
+    display: flex;
+    align-self: center;
+    margin-right: 7em;
+}
+
+.conversionIcons img {
+    height: 25px;
+    padding-left: 1.5em;
 }
