@@ -4,7 +4,7 @@
 }
 
 nav {
-    height: 90px;
+    height: 7vh;
     background: rgb(27,13,10);
     background: linear-gradient(0deg, rgba(27,13,10,1) 0%, rgba(58,28,23,1) 12%, rgba(58,28,23,1) 100%);
     display: flex;
@@ -17,7 +17,7 @@ ul {
     justify-content: flex-end;
     align-items: flex-end;
     padding-right: 40px;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 .tab {

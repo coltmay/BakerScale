@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.conversionPage {
+    display: flex;
+    flex-direction: column;
+    background-color: #E2DACF;
+    height: 93vh;
+}
+
+.conversionHeaders {
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    letter-spacing: 10px;
+    text-decoration: underline;
+    color: #3A1C17;
+    margin-top: 4em;
+    margin-bottom: 1.75em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.conversionIngredientHeader {
+    margin-left: 8em;
+}
+
+.conversionConversionHeader {
+    margin-right: 8em;
+}
+
+.conversionRow {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+
+.secondaryConversionRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 7em;
+}
+
+.conversionIngredient{
+    margin-left: 26.5em;
+    display: flex;
+}
+
+.conversionMeasurement{
+    display: flex;
+}
+
+.conversionConversion{
+    display: flex;
+}
+
+.conversionPage p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.conversionPage input {
+    height: 26px;
+}
+
+.conversionPage select {
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 175px;
+    height: 28px;
+}
+
+.conversionInput {
+    margin-right: 2em;
+}
+
+.conversionRow {
+    display: flex;
+}
+
+.conversionIcons {
+    display: flex;
+    align-self: center;
+    margin-right: 7em;
+}
+
+.conversionIcons img {
+    height: 25px;
+    padding-left: 1.5em;
+}
+
+.conversionAddButton {
+    color: #CFCFCF;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    background-color: #5A291A;
+    border: none;
+    outline: none;
+    height: 60px;
+    width: 285px;
+    align-self: center;
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
