@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom";
+import './Login.css'
 
 export const Login = () => {
     const [loginUser, setLoginUser] = useState({ email: "" })
@@ -37,7 +38,7 @@ export const Login = () => {
     }
 
     return (
-        <>
+        <section className="loginPage">
             <dialog className="" open={existDialog}>
                 <div>User does not exist</div>
                 <button className=""
@@ -45,8 +46,12 @@ export const Login = () => {
                     Close
                 </button>
             </dialog>
-            <section>
-                <form className="" onSubmit={handleLogin}>
+            <div className="grabImage">
+                <h2>"If thou tastest a crust of bread, thou tastest all the stars and all the heavens."</h2>
+                <p>- Robert Browning</p>
+            </div>
+            <section className="loginFormBin">
+                <form className="loginForm" onSubmit={handleLogin}>
                     <label htmlFor="inputEmail">Email</label>
                     <input type="email"
                         id="email"
@@ -55,22 +60,14 @@ export const Login = () => {
                         required autoFocus
                         value={loginUser.email}
                         onChange={handleInputChange} />
-                    {/* <label htmlFor="inputPassword">Password</label>
-                    <input type="password"
-                        id="password"
-                        className=""
-                        placeholder=""
-                        required autoFocus
-                        value={loginUser.password}
-                        onChange={handleInputChange} /> */}
-
-                    <button type="submit">Sign in</button>
+                    <button className="loginSubmit"
+                        type="submit">Sign in</button>
                 </form>
+                <section className="loginText">
+                    <p>Not already a user?</p>
+                    <Link to="/register"><p className="loginRegisterRedirect">Register Here</p></Link>
+                </section>
             </section>
-            <section className="">
-                <p>Not already a user?</p>
-                <Link to="/register">Register Here</Link>
-            </section>
-        </>
+        </section>
     )
 }

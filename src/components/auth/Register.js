@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom";
-
+import './Register.css'
 export const Register = ({ setAuthUser }) => {
     const firstName = useRef()
     const email = useRef()
@@ -46,25 +46,39 @@ export const Register = ({ setAuthUser }) => {
     }
 
     return (
-        <main>
-
+        <section className="registerPage">
             <dialog className="" ref={conflictDialog}>
                 <div>Account with that email address already exists</div>
                 <button className="" onClick={e => conflictDialog.current.close()}>Close</button>
             </dialog>
-
-            <form className="" onSubmit={handleRegister}>
-                <label htmlFor="">Name</label>
-                <input ref={firstName} type="text" name="firstName" className="" required autoFocus />
-                <label htmlFor="inputEmail"> Email address </label>
-                <input ref={email} type="email" name="email" className="" required />
-                <button type="submit"> Sign in </button>
-                <section className="">
+            <div className="grabImage">
+                <h2>"If thou tastest a crust of bread, thou tastest all the stars and all the heavens."</h2>
+                <p>- Robert Browning</p>
+            </div>
+            <section className="registerFormBin">
+                <form className="registerForm" onSubmit={handleRegister}>
+                    <label htmlFor="inputFirstName">First Name</label>
+                    <input ref={firstName}
+                        placeholder="This Javascript needs to be modified."
+                        className=""
+                        type="text"
+                        name="firstName"
+                        required
+                        autoFocus />
+                    <label htmlFor="inputEmail">Email</label>
+                    <input className=""
+                        ref={email}
+                        type="email"
+                        name="email"
+                        required />
+                    <button className="registerSubmit"
+                        type="submit">Register</button>
+                </form>
+                <section className="registerText">
                     <p>Existing User?</p>
-                    <Link to="/login">Sign in Here</Link>
+                    <Link to="/login"><p className="registerLoginRedirect">Sign in Here</p></Link>
                 </section>
-            </form>
-        </main>
+            </section>
+        </section>
     )
 }
-
