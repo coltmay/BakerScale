@@ -20,14 +20,36 @@ export const ConversionList = () => {
                     <div className="conversionIngredient">
                         <input placeholder="change"></input>
                     </div>
-                    <div className="conversionMeasurement">
-                        <p>1</p>
-                        <select placeholder="change"></select>
-                        <p>=</p>
+                    <div>
+                        <div className="conversionMeasurement">
+                            <p>1</p>
+                            <input placeholder="change"></input>
+                            <p>=</p>
+                        </div>
+                        <div className="conversionMeasurement">
+                            <p>1</p>
+                            <input placeholder="change"></input>
+                            <p>=</p>
+                        </div>
+                        <div className="conversionMeasurement">
+                            <p>1</p>
+                            <input placeholder="change"></input>
+                            <p>=</p>
+                        </div>
                     </div>
-                    <div className="conversionConversion">
-                        <input className="conversionInput" placeholder="change"></input>
-                        <p>grams</p>
+                    <div>
+                        <div className="conversionConversion">
+                            <input className="conversionInput" placeholder="change"></input>
+                            <p>grams</p>
+                        </div>
+                        <div className="conversionConversion">
+                            <input className="conversionInput" placeholder="change"></input>
+                            <p>grams</p>
+                        </div>
+                        <div className="conversionConversion">
+                            <input className="conversionInput" placeholder="change"></input>
+                            <p>grams</p>
+                        </div>
                     </div>
                 </section>
                 <div className="conversionIcons">

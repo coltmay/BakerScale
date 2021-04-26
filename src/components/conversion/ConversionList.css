@@ -19,7 +19,7 @@
     text-decoration: underline;
     color: #3A1C17;
     margin-top: 4em;
-    margin-bottom: 1.75em;
+    margin-bottom: 1em;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -51,6 +51,10 @@
     display: flex;
 }
 
+.conversionIngredient input {
+    margin-top: 1.05em;
+}
+
 .conversionMeasurement{
     display: flex;
 }
@@ -67,11 +71,32 @@
     height: 26px;
 }
 
-.conversionPage select {
+.conversionMeasurement input {
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-left: 2em;
     margin-right: 2em;
     width: 175px;
     height: 28px;
+}
+
+.conversionMeasurement p {
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+}
+
+.conversionConversion input {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 175px;
+    height: 28px;
+}
+
+.conversionConversion p {
+    margin-top: 1.2em;
+    margin-bottom: 1em;
 }
 
 .conversionInput {
