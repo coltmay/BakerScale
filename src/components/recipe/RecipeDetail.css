@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.detailPage {
+    background-color: #D5CABB;
+}
+
+.detailTitle {
+
+}
+
+.headerSection {
+    display: flex;
+
+    border: dotted red;
+}
+
+.detailSeperator {
+    border-bottom: green solid;
+}
+
+.detailUser {
+    border: yellow solid;
+}
+
+.detailEditIcon {
+    height: 20px;
+}
+
+.detailDeleteIcon {
+    height: 20px;
+}
+
+.detailBlurb {
+
+    border: dodgerblue dotted;
+}
+
+.detailIngMeas {
+    display: flex;
+    border: dotted red;
+}
+
+.blash {
+    border: yellow dotted;
+}
+
+.detailDirectionBox {
+    border: dotted darkblue;
+}

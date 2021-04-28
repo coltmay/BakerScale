@@ -4,6 +4,7 @@ import { deleteRecipe, getRecipeById } from '../../modules/RecipeManager'
 import saveIcon from '../../images/saveIcon.png'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
+import './RecipeDetail.css'
 
 export const RecipeDetail = () => {
     const [recipe, setRecipe] = useState({});
@@ -26,24 +27,25 @@ export const RecipeDetail = () => {
     }, [recipeId])
 
     return (
-        <>
-            <section>
-                <h1>{recipe.title}</h1>
-                <p>TEMP---------</p>
-                <p>By {recipe.user?.name}</p>
+        <section className="detailPage">
+            <h1 className="detailTitle">{recipe.title}</h1>
+            <div className="detailSeperator"></div>
+            <section className="headerSection">
+                <p className="detailUser" >By {recipe.user?.name}</p>
                 <Link to={`/recipes/${recipe.id}/edit`}>
-                    <img className=""
+                    <img className="detailEditIcon"
                         src={editIcon} />
                 </Link>
                 <a href=''>
-                    <img className=""
+                    <img className="detailDeleteIcon"
                         src={deleteIcon}
                         onClick={handleDelete} />
                 </a>
-                <p>{recipe.blurb}</p>
             </section>
-            <section>
-                <div>
+            <p className="detailBlurb">{recipe.blurb}</p>
+            <div className="detailSeperator"></div>
+            <section className="blash">
+                <div className="detailIngMeas">
                     <h2>Ingredients</h2>
                     <h2>Measurements</h2>
                 </div>
@@ -55,10 +57,10 @@ export const RecipeDetail = () => {
                 </div>
                 {/* --------------There will be many of these!  But how?-------------- */}
             </section>
-            <section>
+            <section className="detailDirectionBox">
                 <h2>Directions</h2>
                 <p>{recipe.directions}</p>
             </section>
-        </>
+        </section>
     )
 }
