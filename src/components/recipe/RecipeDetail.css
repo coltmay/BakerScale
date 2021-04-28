@@ -8,25 +8,35 @@
 }
 
 .detailTitle {
-
+    text-align: center;
 }
 
 .headerSection {
     display: flex;
-
+    margin-left: 35vh;
+    margin-right: 35vh;
     border: dotted red;
 }
 
 .detailSeperator {
+    margin-left: 25vh;
+    margin-right: 25vh;
+
     border-bottom: green solid;
 }
 
 .detailUser {
+    
     border: yellow solid;
+}
+
+.detailButtonBin {
+    margin-left: auto;
 }
 
 .detailEditIcon {
     height: 20px;
+    padding-right: 1em;
 }
 
 .detailDeleteIcon {
@@ -34,19 +44,36 @@
 }
 
 .detailBlurb {
-
+    margin-left: 35vh;
+    margin-right: 35vh;
     border: dodgerblue dotted;
 }
 
 .detailIngMeas {
     display: flex;
+
     border: dotted red;
 }
 
 .blash {
+    margin-left: 50vh;
+    margin-right: 50vh;
+
     border: yellow dotted;
 }
 
 .detailDirectionBox {
-    border: dotted darkblue;
+    margin-left: 50vh;
+    margin-right: 50vh;
+
+    border: dotted rgb(94, 94, 163);
+}
+
+.detailMeasurementsHeading {
+    margin-left: auto;
+}
+
+.detailIngredient {
+    display: flex;
+    justify-content: space-around;
 }

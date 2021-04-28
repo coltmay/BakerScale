@@ -32,25 +32,27 @@ export const RecipeDetail = () => {
             <div className="detailSeperator"></div>
             <section className="headerSection">
                 <p className="detailUser" >By {recipe.user?.name}</p>
-                <Link to={`/recipes/${recipe.id}/edit`}>
-                    <img className="detailEditIcon"
-                        src={editIcon} />
-                </Link>
-                <a href=''>
-                    <img className="detailDeleteIcon"
-                        src={deleteIcon}
-                        onClick={handleDelete} />
-                </a>
+                <div className="detailButtonBin">
+                    <Link to={`/recipes/${recipe.id}/edit`}>
+                        <img className="detailEditIcon"
+                            src={editIcon} />
+                    </Link>
+                    <a href=''>
+                        <img className="detailDeleteIcon"
+                            src={deleteIcon}
+                            onClick={handleDelete} />
+                    </a>
+                </div>
             </section>
             <p className="detailBlurb">{recipe.blurb}</p>
             <div className="detailSeperator"></div>
             <section className="blash">
                 <div className="detailIngMeas">
-                    <h2>Ingredients</h2>
-                    <h2>Measurements</h2>
+                    <h2 className="detailIngredientsHeading">Ingredients</h2>
+                    <h2 className="detailMeasurementsHeading">Measurements</h2>
                 </div>
                 {/* --------------There will be many of these!  But how?...mapping...-------------- */}
-                <div>
+                <div className="detailIngredient">
                     <p>Flour</p>
                     <p>1 cup</p>
                     <p>125 grams</p>
