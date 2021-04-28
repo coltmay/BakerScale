@@ -43,7 +43,6 @@ export const ConversionEditCard = () => (
         </section>
         <div className="conversionIcons">
             <a href=""><img src={saveIcon} /></a>
-            <a href=""><img src={editIcon} /></a>
             <a href=""><img src={deleteIcon} /></a>
         </div>
     </section>

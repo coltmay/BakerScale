@@ -28,6 +28,9 @@ export const ConversionList = () => {
             {ingredients.map(ingredient => <ConversionDisplayCard
                         key={ingredient.id}
                         ingredient={ingredient} />)}
+            {ingredients.map(ingredient => <ConversionEditCard
+                        key={ingredient.id}
+                        ingredient={ingredient} />)}
             <button className="conversionAddButton">Add Measurement</button>
         </section>
     )
