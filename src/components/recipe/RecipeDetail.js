@@ -4,6 +4,7 @@ import { deleteRecipe, getRecipeById } from '../../modules/RecipeManager'
 import saveIcon from '../../images/saveIcon.png'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
+import './RecipeDetail.css'
 
 export const RecipeDetail = () => {
     const [recipe, setRecipe] = useState({});
@@ -26,39 +27,45 @@ export const RecipeDetail = () => {
     }, [recipeId])
 
     return (
-        <>
-            <section>
-                <h1>{recipe.title}</h1>
-                <p>TEMP---------</p>
-                <p>By {recipe.user?.name}</p>
-                <Link to={`/recipes/${recipe.id}/edit`}>
-                    <img className=""
-                        src={editIcon} />
-                </Link>
-                <a href=''>
-                    <img className=""
-                        src={deleteIcon}
-                        onClick={handleDelete} />
-                </a>
-                <p>{recipe.blurb}</p>
+        <section className="detailPage">
+            <h1 className="detailTitle">{recipe.title?.toUpperCase()}</h1>
+            <div className="detailSeperator"></div>
+            <section className="headerSection">
+                <p className="detailUser" >By {recipe.user?.name}</p>
+                <div className="detailButtonBin">
+                    <Link to={`/recipes/${recipe.id}/edit`}>
+                        <img className="detailEditIcon"
+                            src={editIcon} />
+                    </Link>
+                    <a href=''>
+                        <img className="detailDeleteIcon"
+                            src={deleteIcon}
+                            onClick={handleDelete} />
+                    </a>
+                </div>
             </section>
-            <section>
-                <div>
-                    <h2>Ingredients</h2>
-                    <h2>Measurements</h2>
+            <img></img>
+            <p className="detailBlurb">{recipe.blurb}</p>
+            <div className="detailSeperator"></div>
+            <section className="detailSubPage">
+                <div className="detailIngMeas">
+                    <h2 className="detailIngredientsHeading">Ingredients</h2>
+                    <h2 className="detailMeasurementsHeading">Measurements</h2>
                 </div>
                 {/* --------------There will be many of these!  But how?...mapping...-------------- */}
-                <div>
-                    <p>Flour</p>
-                    <p>1 cup</p>
-                    <p>125 grams</p>
+                <div className="detailIngredient">
+                    <p className="ingredientName">Flour</p>
+                    <div className="ingredientConvert">
+                        <p className="ingredientImperial">1 cup</p>
+                        <p className="ingredientGrams">125 grams</p>
+                    </div>
                 </div>
                 {/* --------------There will be many of these!  But how?-------------- */}
             </section>
-            <section>
+            <section className="detailDirectionBox">
                 <h2>Directions</h2>
                 <p>{recipe.directions}</p>
             </section>
-        </>
+        </section>
     )
 }

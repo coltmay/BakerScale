@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.detailPage {
+    background-color: #D5CABB;
+}
+
+.detailTitle {
+    font-family: 'EB Garamond', serif;
+    color: #3A1C17;
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: 0.5em;
+    word-spacing: .25em;
+}
+
+.headerSection {
+    display: flex;
+    margin-left: 60vh;
+    margin-right: 60vh;
+}
+
+.detailSeperator {
+    margin-left: 60vh;
+    margin-right: 60vh;
+    border-bottom:#3A1C17 solid 1.5px;
+}
+
+.detailUser {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.detailButtonBin {
+    margin-left: auto;
+}
+
+.detailEditIcon {
+    height: 20px;
+    padding-right: 1em;
+}
+
+.detailDeleteIcon {
+    height: 20px;
+}
+
+.detailBlurb {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 60vh;
+    margin-right: 60vh;
+}
+
+.detailIngMeas {
+    font-family: 'EB Garamond', serif;
+    color: #3A1C17;
+    text-decoration: underline;
+    display: flex;
+
+}
+
+.detailSubPage {
+    margin-top: 3em;
+    margin-left: 50vh;
+    margin-right: 50vh;
+}
+
+.detailDirectionBox {
+    margin-top: 3em;
+    margin-left: 50vh;
+    margin-right: 50vh;
+}
+
+.detailDirectionBox h2 {
+    font-size: 36px;
+    font-family: 'EB Garamond', serif;
+    color: #3A1C17;
+    text-decoration: underline;
+}
+
+.detailDirectionBox p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.detailIngredient {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+}
+
+.detailIngredientsHeading {
+    font-size: 36px;
+}
+
+.detailMeasurementsHeading {
+    font-size: 36px;
+    margin-left: auto;
+    margin-right: 3.15em;
+}
+
+.ingredientConvert {
+    display: flex;
+    margin-left: auto;
+    margin-right: 5em;
+}
+
+.ingredientImperial {
+    margin-right: 10em;
+}
