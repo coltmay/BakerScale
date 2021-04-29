@@ -101,6 +101,7 @@ export const RecipeEdit = () => {
                         onChange={null} />
                         </div>
                 </section>
+                <button className="ingredientAddButton">Add</button>
                 <div className="directionBox">
                 <label htmlFor="inputDirections">Directions</label>
                 <textarea className=""

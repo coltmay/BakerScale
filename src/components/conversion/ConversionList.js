@@ -10,7 +10,8 @@ export const ConversionList = () => {
     const getIngredients = () => {
         return getAllIngredients()
             .then(ingredientsFromAPI => {
-                setIngredients(ingredientsFromAPI)
+                let sortedIngredients = ingredientsFromAPI.sort((a, b) => a.name.localeCompare(b.name))
+                setIngredients(sortedIngredients)
             })
     }
 
@@ -24,13 +25,14 @@ export const ConversionList = () => {
                 <h1 className="conversionIngredientHeader">INGREDIENT</h1>
                 <h1 className="conversionMeasurementHeader">MEASUREMENT</h1>
                 <h1 className="conversionConversionHeader">CONVERSION</h1>
-            </section>
-            {ingredients.map(ingredient => <ConversionDisplayCard
+            </section>           
+            {
+            ingredients.map(ingredient => <ConversionDisplayCard
                         key={ingredient.id}
                         ingredient={ingredient} />)}
-            {ingredients.map(ingredient => <ConversionEditCard
+            {/* {ingredients.map(ingredient => <ConversionEditCard
                         key={ingredient.id}
-                        ingredient={ingredient} />)}
+                        ingredient={ingredient} />)} */}
             <button className="conversionAddButton">Add Measurement</button>
         </section>
     )
