@@ -28,7 +28,7 @@ export const RecipeDetail = () => {
 
     return (
         <section className="detailPage">
-            <h1 className="detailTitle">{recipe.title}</h1>
+            <h1 className="detailTitle">{recipe.title?.toUpperCase()}</h1>
             <div className="detailSeperator"></div>
             <section className="headerSection">
                 <p className="detailUser" >By {recipe.user?.name}</p>
@@ -44,18 +44,21 @@ export const RecipeDetail = () => {
                     </a>
                 </div>
             </section>
+            <img></img>
             <p className="detailBlurb">{recipe.blurb}</p>
             <div className="detailSeperator"></div>
-            <section className="blash">
+            <section className="detailSubPage">
                 <div className="detailIngMeas">
                     <h2 className="detailIngredientsHeading">Ingredients</h2>
                     <h2 className="detailMeasurementsHeading">Measurements</h2>
                 </div>
                 {/* --------------There will be many of these!  But how?...mapping...-------------- */}
                 <div className="detailIngredient">
-                    <p>Flour</p>
-                    <p>1 cup</p>
-                    <p>125 grams</p>
+                    <p className="ingredientName">Flour</p>
+                    <div className="ingredientConvert">
+                        <p className="ingredientImperial">1 cup</p>
+                        <p className="ingredientGrams">125 grams</p>
+                    </div>
                 </div>
                 {/* --------------There will be many of these!  But how?-------------- */}
             </section>
