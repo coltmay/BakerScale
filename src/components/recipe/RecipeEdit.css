@@ -127,3 +127,16 @@
     width: 220px;
     margin-left: 2em;
 }
+
+.ingredientAddButton {
+    margin-top: 2em;
+    align-self: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: #CFCFCF;
+    outline: none;
+    border: none;
+    background-color: #5A291A;
+    height: 45px;
+    width: 120px;
+}
