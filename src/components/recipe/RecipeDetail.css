@@ -82,14 +82,16 @@
 }
 
 .detailDirectionBox p {
+    margin-top: 1em;
     font-family: 'Open Sans', sans-serif;
+    white-space: pre-wrap;
 }
-
 
 .detailIngredient {
     margin-top: 1em;
     margin-bottom: 1em;
     display: flex;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .detailIngredientsHeading {
