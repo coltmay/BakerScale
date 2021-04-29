@@ -10,6 +10,11 @@ export const getRecipeById = (id) => {
         .then(res => res.json())
 }
 
+export const getIngredientsByRecipe = (id) => {
+    return fetch(`${remoteURL}/recipeIngredients?_recipeId=${id}_expand=recipe&_expand=ingredient&_expand=measurement`)
+        .then(res => res.json())
+}
+
 export const addRecipe = (newRecipe) => {
     return fetch(`${remoteURL}/recipes`, {
         method: "POST",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom'
-import { deleteRecipe, getRecipeById } from '../../modules/RecipeManager'
+import { RecipeIngredientsList } from './RecipeDetailIngredientList'
+import { deleteRecipe, getIngredientsByRecipe, getRecipeById } from '../../modules/RecipeManager'
 import saveIcon from '../../images/saveIcon.png'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
@@ -9,6 +10,7 @@ import './RecipeDetail.css'
 export const RecipeDetail = () => {
     const [recipe, setRecipe] = useState({});
     const { recipeId } = useParams();
+    const [ingredients, setIngredients] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const history = useHistory();
 
@@ -26,6 +28,16 @@ export const RecipeDetail = () => {
             })
     }, [recipeId])
 
+    useEffect(() => {
+        getIngredientsByRecipe(recipeId)
+            .then(ingredientsFromAPI => {
+                setIngredients(ingredientsFromAPI)
+                setIsLoading(false)
+            })
+    }, [recipeId])
+
+    console.log(ingredients)
+    
     return (
         <section className="detailPage">
             <h1 className="detailTitle">{recipe.title?.toUpperCase()}</h1>
@@ -53,13 +65,10 @@ export const RecipeDetail = () => {
                     <h2 className="detailMeasurementsHeading">Measurements</h2>
                 </div>
                 {/* --------------There will be many of these!  But how?...mapping...-------------- */}
-                <div className="detailIngredient">
-                    <p className="ingredientName">Flour</p>
-                    <div className="ingredientConvert">
-                        <p className="ingredientImperial">1 cup</p>
-                        <p className="ingredientGrams">125 grams</p>
-                    </div>
-                </div>
+                {
+                    ingredients.map(ingredient => <RecipeIngredientsList
+                        key={ingredient.id}
+                        ingredient={ingredient} />)}
                 {/* --------------There will be many of these!  But how?-------------- */}
             </section>
             <section className="detailDirectionBox">
@@ -69,3 +78,4 @@ export const RecipeDetail = () => {
         </section>
     )
 }
+
