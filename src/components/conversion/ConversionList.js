@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { ConversionEditCard } from './ConversionEditCard'
 import { ConversionDisplayCard } from './ConversionDisplayCard'
-import './ConversionList.css'
 import { getAllIngredients } from '../../modules/ConversionManager'
+import './ConversionList.css'
 
 export const ConversionList = () => {
     const [ingredients, setIngredients] = useState([]);
@@ -30,9 +29,6 @@ export const ConversionList = () => {
             ingredients.map(ingredient => <ConversionDisplayCard
                         key={ingredient.id}
                         ingredient={ingredient} />)}
-            {/* {ingredients.map(ingredient => <ConversionEditCard
-                        key={ingredient.id}
-                        ingredient={ingredient} />)} */}
             <button className="conversionAddButton">Add Measurement</button>
         </section>
     )
