@@ -6,15 +6,6 @@ import './RecipeEdit.css'
 import { RecipeEditIngredientlist } from "./RecipeEditIngredientList"
 
 export const RecipeEdit = () => {
-    // ! ============================================================================== 
-    // !                THIS WILL ALL BE CHANGED LATER TO SUITE AN EDIT
-    /* ===================================================================================
-    So... What do I need to do?
-    I'll need to add a title, which is covered in the name.
-    I'll need to add a blurb, covered by blurb.
-    I'll need to add ingredients, multiple of them.  How will that work?  Let's sort it out right now...
-    ====================================================================================*/
-    // ! ============================================================================== 
     const [recipe, setRecipe] = useState({})
     const { recipeId } = useParams()
     const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +15,6 @@ export const RecipeEdit = () => {
     const handleFieldChange = (event) => {
         const stateToChange = { ...recipe }
         stateToChange[event.target.id] = event.target.value;
-        console.log(typeof event.target.value)
         setRecipe(stateToChange)
     }
 
@@ -45,7 +35,6 @@ export const RecipeEdit = () => {
         updateRecipe(editedRecipe)
             .then(() => history.push("/recipes"))
     }
-
 
     useEffect(() => {
         getRecipeById(recipeId)
