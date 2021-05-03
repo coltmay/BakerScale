@@ -10,6 +10,7 @@ import { SearchList } from "./search/SearchList";
 import { RecipeDetail } from "./recipe/RecipeDetail";
 import { RecipeEdit } from "./recipe/RecipeEdit";
 import { About } from "./about/About";
+import { ConversionEditCard } from "./conversion/ConversionEditCard";
 
 export const ApplicationViews = () => {
     return (
@@ -34,8 +35,12 @@ export const ApplicationViews = () => {
                 <RecipeEdit/>
             </Route>
 
-            <Route path="/conversions">
+            <Route exact path="/conversions">
                 <ConversionList/>
+            </Route>
+
+            <Route path="/conversions/add">
+                <ConversionEditCard/>
             </Route>
 
             <Route path="/about">
