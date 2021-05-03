@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from "react"
 import { useParams, useHistory } from "react-router-dom"
-import { getRecipeById, updateRecipe } from "../../modules/RecipeManager"
+import { getIngredientsByRecipe, getRecipeById, updateRecipe } from "../../modules/RecipeManager"
 import { getCurrentUser } from '../helper/helperFunctions'
 import './RecipeEdit.css'
+import { RecipeEditIngredientlist } from "./RecipeEditIngredientList"
 
 export const RecipeEdit = () => {
-    // ! ============================================================================== 
-    // !                THIS WILL ALL BE CHANGED LATER TO SUITE AN EDIT
-    /* ===================================================================================
-    So... What do I need to do?
-    I'll need to add a title, which is covered in the name.
-    I'll need to add a blurb, covered by blurb.
-    I'll need to add ingredients, multiple of them.  How will that work?  Let's sort it out right now...
-    ====================================================================================*/
-    // ! ============================================================================== 
     const [recipe, setRecipe] = useState({})
     const { recipeId } = useParams()
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
+    const [ingredients, setIngredients] = useState([]);
 
     const handleFieldChange = (event) => {
         const stateToChange = { ...recipe }
@@ -43,7 +36,6 @@ export const RecipeEdit = () => {
             .then(() => history.push("/recipes"))
     }
 
-
     useEffect(() => {
         getRecipeById(recipeId)
             .then(recipe => {
@@ -51,6 +43,14 @@ export const RecipeEdit = () => {
                 setIsLoading(false)
             })
     }, [])
+
+    useEffect(() => {
+        getIngredientsByRecipe(recipeId)
+            .then(ingredientsFromAPI => {
+                setIngredients(ingredientsFromAPI)
+                setIsLoading(false)
+            })
+    }, [recipeId])
 
     return (
         <section className="recipeEditPage">
@@ -73,34 +73,10 @@ export const RecipeEdit = () => {
                         value={recipe.blurb}
                         onChange={handleFieldChange} />
                 </div>
-                {/* //TODO Change this later!
-                Refactor into something that can map? */}
-                <section className="conversionBox">
-                    <div className="ingredientBox">
-                        <label htmlFor="inputIngredients">Ingredients</label>
-                        <input className=""
-                            id="ingredients"
-                            required
-                            value={null}
-                            onChange={null} />
-                    </div>
-                    <div className="quantityBox">
-                    <label htmlFor="inputQuantity">Quantity</label>
-                    <input className=""
-                        id="quantity"
-                        required
-                        value={null}
-                        onChange={null} />
-                        </div>
-                        <div className="measurementBox">
-                    <label htmlFor="inputMeasurement">Measurement</label>
-                    <select className=""
-                        id="measurement"
-                        required
-                        value={null}
-                        onChange={null} />
-                        </div>
-                </section>
+                {ingredients.map(ingredient => <RecipeEditIngredientlist
+                        key={ingredient.id}
+                        ingredient={ingredient}
+                        handleFieldChange={handleFieldChange} />)}
                 <button className="ingredientAddButton">Add</button>
                 <div className="directionBox">
                 <label htmlFor="inputDirections">Directions</label>
