@@ -14,3 +14,18 @@ export const addIngredient = (newIngredient) => {
         body: JSON.stringify(newIngredient)
     }).then(response => response.json())
 }
+
+export const updateIngredient = (editedIngredient) => {
+    return fetch(`${remoteURL}/ingredients/${editedIngredient.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(editedIngredient)
+    }).then(data => data.json());
+}
+
+export const getIngredientById = (ingredientId) => {
+    return fetch(`${remoteURL}/ingredients/${ingredientId}`)
+    .then(res => res.json())
+}

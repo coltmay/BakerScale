@@ -2,6 +2,7 @@ import React from "react";
 import saveIcon from '../../images/saveIcon.png'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
+import { Link } from "react-router-dom";
 
 export const ConversionDisplayCard = ({ ingredient }) => {
 
@@ -44,7 +45,9 @@ export const ConversionDisplayCard = ({ ingredient }) => {
                 </div>
             </section>
             <div className="conversionIcons">
-                <a href=""><img src={editIcon} onClick={null} /></a>
+                <Link to={`/conversions/${ingredient.id}/edit`}>
+                    <a href=""><img src={editIcon} /></a>
+                </Link>
                 <a href=""><img src={deleteIcon} onClick={null} /></a>
             </div>
         </section>

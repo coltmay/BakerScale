@@ -6,11 +6,12 @@ import { RecipeForm } from "./recipe/RecipeForm";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
 import { ConversionList } from "./conversion/ConversionList";
+import { ConversionAddCard } from "./conversion/ConversionAddCard";
+import { ConversionEditCard } from "./conversion/ConversionEditCard";
 import { SearchList } from "./search/SearchList";
 import { RecipeDetail } from "./recipe/RecipeDetail";
 import { RecipeEdit } from "./recipe/RecipeEdit";
 import { About } from "./about/About";
-import { ConversionEditCard } from "./conversion/ConversionEditCard";
 
 export const ApplicationViews = () => {
     return (
@@ -40,6 +41,10 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route path="/conversions/add">
+                <ConversionAddCard/>
+            </Route>
+
+            <Route path="/conversions/:ingredientId(\d+)/edit">
                 <ConversionEditCard/>
             </Route>
 
