@@ -4,7 +4,7 @@ import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
 import { Link } from "react-router-dom";
 
-export const ConversionDisplayCard = ({ ingredient }) => {
+export const ConversionDisplayCard = ({ ingredient, deleteAndSetIngredients }) => {
 
     return (
         <section className="conversionRow">
@@ -48,7 +48,7 @@ export const ConversionDisplayCard = ({ ingredient }) => {
                 <Link to={`/conversions/${ingredient.id}/edit`}>
                     <a href=""><img src={editIcon} /></a>
                 </Link>
-                <a href=""><img src={deleteIcon} onClick={null} /></a>
+                <a href=""><img src={deleteIcon} onClick={() => deleteAndSetIngredients(ingredient.id)} /></a>
             </div>
         </section>
     )

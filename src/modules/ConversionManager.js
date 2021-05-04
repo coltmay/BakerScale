@@ -27,5 +27,11 @@ export const updateIngredient = (editedIngredient) => {
 
 export const getIngredientById = (ingredientId) => {
     return fetch(`${remoteURL}/ingredients/${ingredientId}`)
-    .then(res => res.json())
+        .then(res => res.json())
+}
+
+export const deleteIngredient = (ingredientId) => {
+    return fetch(`${remoteURL}/ingredients/${ingredientId}`, {
+        method: "DELETE"
+    }).then(res => res.json())
 }

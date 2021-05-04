@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { ConversionDisplayCard } from './ConversionDisplayCard'
-import { getAllIngredients } from '../../modules/ConversionManager'
+import { deleteIngredient, getAllIngredients } from '../../modules/ConversionManager'
 import './ConversionList.css'
 
 export const ConversionList = () => {
@@ -14,6 +14,11 @@ export const ConversionList = () => {
                 let sortedIngredients = ingredientsFromAPI.sort((a, b) => a.name.localeCompare(b.name))
                 setIngredients(sortedIngredients)
             })
+    }
+
+    const deleteAndSetIngredients = (ingredientId) => {
+        deleteIngredient(ingredientId)
+            .then(getIngredients)
     }
 
     useEffect(() => {
@@ -30,7 +35,8 @@ export const ConversionList = () => {
             {
                 ingredients.map(ingredient => <ConversionDisplayCard
                     key={ingredient.id}
-                    ingredient={ingredient} />)}
+                    ingredient={ingredient}
+                    deleteAndSetIngredients={deleteAndSetIngredients} />)}
             <button className="conversionAddButton" onClick={() => { history.push("/conversions/add") }}>Add Measurement</button>
         </section>
     )
