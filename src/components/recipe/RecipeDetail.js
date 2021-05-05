@@ -35,8 +35,6 @@ export const RecipeDetail = () => {
                 setIsLoading(false)
             })
     }, [recipeId])
-
-    console.log(ingredients)
     
     return (
         <section className="detailPage">

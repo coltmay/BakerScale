@@ -40,3 +40,24 @@ export const updateRecipe = (editedRecipe) => {
         body: JSON.stringify(editedRecipe)
     }).then(result => result.json())
 }
+
+export const deleteRecipeIngredient = (id) => {
+    return fetch(`${remoteURL}/recipeIngredients/${id}`, {
+        method: "DELETE"
+    }).then(result => result.json())
+}
+
+export const getRecipeIngredientByIngredient = (id) => {
+    return fetch(`${remoteURL}/recipeIngredients/?ingredientId=${id}`)
+        .then(res => res.json())
+}
+
+export const addRecipeIngredient = (newRecipeIngredient) => {
+    return fetch(`${remoteURL}/recipeIngredients`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newRecipeIngredient)
+    }).then(res => res.json())
+}

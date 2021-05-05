@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { ConversionDisplayCard } from './ConversionDisplayCard'
 import { deleteIngredient, getAllIngredients } from '../../modules/ConversionManager'
 import './ConversionList.css'
+import { getRecipeIngredientByIngredient } from '../../modules/RecipeManager';
 
 export const ConversionList = () => {
     const [ingredients, setIngredients] = useState([]);

@@ -12,6 +12,7 @@ import { SearchList } from "./search/SearchList";
 import { RecipeDetail } from "./recipe/RecipeDetail";
 import { RecipeEdit } from "./recipe/RecipeEdit";
 import { About } from "./about/About";
+import { RecipeIngredientForm } from "./recipe/RecipeIngredientForm";
 
 export const ApplicationViews = () => {
     return (
@@ -28,8 +29,12 @@ export const ApplicationViews = () => {
                 <RecipeDetail/>
             </Route>
 
-            <Route path="/recipes/add">
+            <Route exact path="/recipes/add">
                 <RecipeForm/>
+            </Route>
+
+            <Route path="/recipes/add/ingredients/:recipeId(\d+)">
+                <RecipeIngredientForm/>
             </Route>
 
             <Route path="/recipes/:recipeId(\d+)/edit">
