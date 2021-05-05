@@ -138,6 +138,8 @@
     padding-right: 1em;
 }
 
-.displayConversionBox .measurementBox {
-    margin-right: 7em;
+.recipeIngredientDeleteIcon {
+    align-self: center;
+    height: 20px;
+    padding-right: 1em;
 }

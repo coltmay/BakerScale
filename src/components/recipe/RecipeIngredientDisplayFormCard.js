@@ -1,7 +1,8 @@
 import React from 'react'
+import deleteIcon from '../../images/deleteIcon.png';
 import './RecipeForm.css'
 
-export const RecipeIngredientDisplayFormCard = ({ recipeIngredientFromDB }) => {
+export const RecipeIngredientDisplayFormCard = ({ recipeIngredientFromDB, deleteAndSetRecipeIngredients }) => {
 
     return (
         <>
@@ -18,6 +19,11 @@ export const RecipeIngredientDisplayFormCard = ({ recipeIngredientFromDB }) => {
                     <label htmlFor="inputMeasurement">Measurement</label>
                     <p className="">{recipeIngredientFromDB.measurement.name}</p>
                 </div>
+                <a href='' className="recipeIngredientButtonBox">
+                    <img className="recipeIngredientDeleteIcon"
+                        src={deleteIcon}
+                        onClick={() => deleteAndSetRecipeIngredients(recipeIngredientFromDB.id)} />
+                </a>
             </section>
         </>
     )

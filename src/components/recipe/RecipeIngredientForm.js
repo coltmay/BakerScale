@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router'
-import { addRecipeIngredient, getIngredientsByRecipe } from '../../modules/RecipeManager'
+import { addRecipeIngredient, getIngredientsByRecipe, deleteRecipeIngredient } from '../../modules/RecipeManager'
 import { getAllIngredients } from '../../modules/ConversionManager';
 import saveIcon from '../../images/saveIcon.png'
 import './RecipeForm.css'
@@ -42,10 +42,15 @@ export const RecipeIngredientForm = () => {
         event.preventDefault();
         addRecipeIngredient(recipeIngredient)
             .then(() => getRecipeIngredients())
-            recipeIngredient.ingredientId = "";
-            recipeIngredient.measurementId = "";
-            recipeIngredient.measurementAmount = "";
-        }
+        recipeIngredient.ingredientId = "";
+        recipeIngredient.measurementId = "";
+        recipeIngredient.measurementAmount = "";
+    }
+
+    const deleteAndSetRecipeIngredients = (recipeIngredientId) => {
+        deleteRecipeIngredient(recipeIngredientId)
+            .then(() => getRecipeIngredients())
+    }
 
     useEffect(() => {
         getIngredients()
@@ -61,7 +66,8 @@ export const RecipeIngredientForm = () => {
         <section className="recipeAddPage">
             <form className="recipeAddForm">
                 {recipeIngredients.map(recipeIngredientFromDB => <RecipeIngredientDisplayFormCard
-                    recipeIngredientFromDB={recipeIngredientFromDB} />)}
+                    recipeIngredientFromDB={recipeIngredientFromDB}
+                    deleteAndSetRecipeIngredients={deleteAndSetRecipeIngredients} />)}
                 <RecipeIngredientFormCard
                     ingredients={ingredients}
                     recipeIngredient={recipeIngredient}
