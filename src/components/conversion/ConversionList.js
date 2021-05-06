@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { ConversionDisplayCard } from './ConversionDisplayCard'
 import { deleteIngredient, getAllIngredients } from '../../modules/ConversionManager'
+import { getCurrentUser } from '../helper/helperFunctions'
 import './ConversionList.css'
-import { getRecipeIngredientByIngredient } from '../../modules/RecipeManager';
 
 export const ConversionList = () => {
     const [ingredients, setIngredients] = useState([]);
@@ -38,7 +38,10 @@ export const ConversionList = () => {
                     key={ingredient.id}
                     ingredient={ingredient}
                     deleteAndSetIngredients={deleteAndSetIngredients} />)}
-            <button className="conversionAddButton" onClick={() => { history.push("/conversions/add") }}>Add Measurement</button>
+            {getCurrentUser() ?
+                <button className="conversionAddButton" onClick={() => { history.push("/conversions/add") }}>Add Measurement</button>
+                : null
+            }
         </section>
     )
 }

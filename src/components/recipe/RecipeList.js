@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { RecipeCard } from './RecipeCard'
 import { getAllRecipes, deleteRecipe } from '../../modules/RecipeManager'
+import { getCurrentUser } from '../helper/helperFunctions'
 import './RecipeList.css'
 
 // A function to return recipes in a list format.
@@ -36,9 +37,12 @@ export const RecipeList = () => {
             <div className="transparentWhite">
                 <div className="listSection">
                     <div className="addRecipeToListBin">
+                        {getCurrentUser() ?
                         <button className="addRecipeToList"
                             onClick={() => history.push("/recipes/add")}
                         >Add Recipe</button>
+                        : null
+                        }
                     </div>
                     {recipes.map(recipe => <RecipeCard
                         key={recipe.id}

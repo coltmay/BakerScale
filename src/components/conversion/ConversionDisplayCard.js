@@ -1,7 +1,8 @@
 import React from "react";
-import saveIcon from '../../images/saveIcon.png'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
+import nullIcon from '../../images/nullIcon.png'
+import { getCurrentUser } from '../helper/helperFunctions'
 import { Link } from "react-router-dom";
 
 export const ConversionDisplayCard = ({ ingredient, deleteAndSetIngredients }) => {
@@ -10,7 +11,7 @@ export const ConversionDisplayCard = ({ ingredient, deleteAndSetIngredients }) =
         <section className="conversionRow">
             <section className="secondaryConversionRow">
                 <div className="conversionIngredient">
-                    <input className="displayConversion ingredientDisplayConversion" readOnly  value={ingredient.name}></input>
+                    <input className="displayConversion ingredientDisplayConversion" readOnly value={ingredient.name}></input>
                 </div>
                 <div>
                     <div className="conversionMeasurement">
@@ -44,12 +45,19 @@ export const ConversionDisplayCard = ({ ingredient, deleteAndSetIngredients }) =
                     </div>
                 </div>
             </section>
-            <div className="conversionIcons">
-                <Link to={`/conversions/${ingredient.id}/edit`}>
-                    <img src={editIcon} />
-                </Link>
-                <a href=""><img src={deleteIcon} onClick={() => deleteAndSetIngredients(ingredient.id)} /></a>
-            </div>
+            {getCurrentUser() ?
+                <div className="conversionIcons">
+                    <Link to={`/conversions/${ingredient.id}/edit`}>
+                        <img src={editIcon} />
+                    </Link>
+                    <a href=""><img src={deleteIcon} onClick={() => deleteAndSetIngredients(ingredient.id)} /></a>
+                </div>
+                :
+                <div className="conversionIcons">
+                    <img src={nullIcon}/>
+                    <img src={nullIcon}/>
+                </div>
+            }
         </section>
     )
 }
