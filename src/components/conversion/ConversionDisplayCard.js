@@ -10,43 +10,43 @@ export const ConversionDisplayCard = ({ ingredient, deleteAndSetIngredients }) =
         <section className="conversionRow">
             <section className="secondaryConversionRow">
                 <div className="conversionIngredient">
-                    <input className="displayConversion ingredientDisplayConversion" value={ingredient.name}></input>
+                    <input className="displayConversion ingredientDisplayConversion" readOnly  value={ingredient.name}></input>
                 </div>
                 <div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="cup"></input>
+                        <input className="displayConversion" value="cup" readOnly></input>
                         <p>=</p>
                     </div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="tablespoon"></input>
+                        <input className="displayConversion" value="tablespoon" readOnly></input>
                         <p>=</p>
                     </div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="teaspoon"></input>
+                        <input className="displayConversion" value="teaspoon" readOnly></input>
                         <p>=</p>
                     </div>
                 </div>
                 <div>
                     <div className="conversionConversion">
-                        <input className="conversionInput displayConversion displayConversionGrams" value={ingredient.cupToGram}></input>
+                        <input className="conversionInput displayConversion displayConversionGrams" readOnly value={ingredient.cupToGram}></input>
                         <p>grams</p>
                     </div>
                     <div className="conversionConversion">
-                        <input className="conversionInput displayConversion displayConversionGrams" value={ingredient.tablespoonToGram}></input>
+                        <input className="conversionInput displayConversion displayConversionGrams" readOnly value={ingredient.tablespoonToGram}></input>
                         <p>grams</p>
                     </div>
                     <div className="conversionConversion">
-                        <input className="conversionInput displayConversion displayConversionGrams" value={ingredient.teaspoonToGram}></input>
+                        <input className="conversionInput displayConversion displayConversionGrams" readOnly value={ingredient.teaspoonToGram}></input>
                         <p>grams</p>
                     </div>
                 </div>
             </section>
             <div className="conversionIcons">
                 <Link to={`/conversions/${ingredient.id}/edit`}>
-                    <a href=""><img src={editIcon} /></a>
+                    <img src={editIcon} />
                 </Link>
                 <a href=""><img src={deleteIcon} onClick={() => deleteAndSetIngredients(ingredient.id)} /></a>
             </div>

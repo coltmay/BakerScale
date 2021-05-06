@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router'
 import { addRecipeIngredient, getIngredientsByRecipe, deleteRecipeIngredient } from '../../modules/RecipeManager'
 import { getAllIngredients } from '../../modules/ConversionManager';
-import saveIcon from '../../images/saveIcon.png'
-import './RecipeForm.css'
 import { RecipeIngredientFormCard } from './RecipeIngredientFormCard';
 import { RecipeIngredientDisplayFormCard } from './RecipeIngredientDisplayFormCard';
+import './RecipeForm.css'
 
 export const RecipeIngredientForm = () => {
     const { recipeId } = useParams();
@@ -66,6 +65,7 @@ export const RecipeIngredientForm = () => {
         <section className="recipeAddPage">
             <form className="recipeAddForm">
                 {recipeIngredients.map(recipeIngredientFromDB => <RecipeIngredientDisplayFormCard
+                    key={recipeIngredientFromDB.id}
                     recipeIngredientFromDB={recipeIngredientFromDB}
                     deleteAndSetRecipeIngredients={deleteAndSetRecipeIngredients} />)}
                 <RecipeIngredientFormCard
@@ -73,6 +73,8 @@ export const RecipeIngredientForm = () => {
                     recipeIngredient={recipeIngredient}
                     handleControlledInputChange={handleControlledInputChange}
                     handelClickSave={handelClickSave} />
+            <button className="addRecipeButton"
+                    onClick={() => history.push(`/recipes`)}>Publish Recipe</button>
             </form>
         </section>
     )

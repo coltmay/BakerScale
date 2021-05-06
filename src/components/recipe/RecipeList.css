@@ -72,3 +72,16 @@ a:hover, a:visited, a:link, a:active
 .deleteIcon {
     height: 20px;
 }
+
+.addRecipeButton {
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 2em;
+    align-self: center;
+    font-size: 24px;
+    color: #CFCFCF;
+    outline: none;
+    border: none;
+    background-color: #5A291A;
+    height: 40px;
+    width: 190px;
+}

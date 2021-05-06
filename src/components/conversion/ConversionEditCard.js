@@ -55,17 +55,17 @@ export const ConversionEditCard = () => {
                 <div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="cup" onChange={null}></input>
+                        <input className="displayConversion" value="cup" readOnly></input>
                         <p>=</p>
                     </div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="tablespoon" onChange={null}></input>
+                        <input className="displayConversion" value="tablespoon" readOnly></input>
                         <p>=</p>
                     </div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="teaspoon" onChange={null}></input>
+                        <input className="displayConversion" value="teaspoon" readOnly></input>
                         <p>=</p>
                     </div>
                 </div>

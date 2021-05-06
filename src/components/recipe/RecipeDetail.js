@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom'
 import { RecipeIngredientsList } from './RecipeDetailIngredientList'
 import { deleteRecipe, getIngredientsByRecipe, getRecipeById } from '../../modules/RecipeManager'
-import saveIcon from '../../images/saveIcon.png'
+import { getCurrentUser } from '../helper/helperFunctions'
 import editIcon from '../../images/editIcon.png';
 import deleteIcon from '../../images/deleteIcon.png';
 import './RecipeDetail.css'
@@ -35,24 +35,27 @@ export const RecipeDetail = () => {
                 setIsLoading(false)
             })
     }, [recipeId])
-    
+
     return (
         <section className="detailPage">
             <h1 className="detailTitle">{recipe.title?.toUpperCase()}</h1>
             <div className="detailSeperator"></div>
             <section className="headerSection">
                 <p className="detailUser" >By {recipe.user?.name}</p>
-                <div className="detailButtonBin">
-                    <Link to={`/recipes/${recipe.id}/edit`}>
-                        <img className="detailEditIcon"
-                            src={editIcon} />
-                    </Link>
-                    <a href=''>
-                        <img className="detailDeleteIcon"
-                            src={deleteIcon}
-                            onClick={handleDelete} />
-                    </a>
-                </div>
+                {recipe.userId === getCurrentUser() ?
+                    <div className="detailButtonBin">
+                        <Link to={`/recipes/${recipe.id}/edit`}>
+                            <img className="detailEditIcon"
+                                src={editIcon} />
+                        </Link>
+                        <a href=''>
+                            <img className="detailDeleteIcon"
+                                src={deleteIcon}
+                                onClick={handleDelete} />
+                        </a>
+                    </div>
+                    : null
+                }
             </section>
             <img></img>
             <p className="detailBlurb">{recipe.blurb}</p>
