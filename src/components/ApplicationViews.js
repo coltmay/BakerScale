@@ -14,59 +14,63 @@ import { RecipeEdit } from "./recipe/RecipeEdit";
 import { About } from "./about/About";
 import { RecipeIngredientForm } from "./recipe/RecipeIngredientForm";
 
-export const ApplicationViews = () => {
+export const ApplicationViews = ({ currentUser, setCurrentUser }) => {
     return (
         <>
             <Route exact path="/">
-                <LandingPage/>
+                <LandingPage />
             </Route>
 
             <Route exact path="/recipes">
-                <RecipeList/>
+                <RecipeList />
             </Route>
 
             <Route exact path="/recipes/:recipeId(\d+)">
-                <RecipeDetail/>
+                <RecipeDetail />
             </Route>
 
             <Route exact path="/recipes/add">
-                <RecipeForm/>
+                <RecipeForm />
             </Route>
 
             <Route path="/recipes/add/ingredients/:recipeId(\d+)">
-                <RecipeIngredientForm/>
+                <RecipeIngredientForm />
             </Route>
 
             <Route path="/recipes/:recipeId(\d+)/edit">
-                <RecipeEdit/>
+                <RecipeEdit />
             </Route>
 
             <Route exact path="/conversions">
-                <ConversionList/>
+                <ConversionList />
             </Route>
 
             <Route path="/conversions/add">
-                <ConversionAddCard/>
+                <ConversionAddCard />
             </Route>
 
             <Route path="/conversions/:ingredientId(\d+)/edit">
-                <ConversionEditCard/>
+                <ConversionEditCard />
             </Route>
 
             <Route path="/about">
-                <About/>
+                <About />
             </Route>
 
             <Route path="/search">
-                <SearchList/>
+                <SearchList />
             </Route>
 
             <Route path="/login">
-                <Login/>
+                <Login
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser} />
             </Route>
 
             <Route path="/register">
-                <Register/>
+                <Register
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser} />
             </Route>
         </>
     )

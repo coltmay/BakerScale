@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react"
 import { Link, useHistory } from "react-router-dom";
 import './Login.css'
 
-export const Login = () => {
+export const Login = ({ currentUser, setCurrentUser }) => {
     const [loginUser, setLoginUser] = useState({ email: "" })
     const [existDialog, setExistDialog] = useState(false)
 
@@ -30,6 +30,7 @@ export const Login = () => {
                 if (exists) {
                     // The user id is saved under the key baking_user in session Storage. Change below if needed!
                     sessionStorage.setItem("baking_user", exists.id)
+                    setCurrentUser(exists.id)
                     history.push("/")
                 } else {
                     setExistDialog(true)
