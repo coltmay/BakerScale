@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import './Landing.css'
 
 export const LandingPage = () => (
-    <body className="landingPage">
+    <section className="landingPage">
         <div className="landingOverlay" />
         <section className="hook">
             <div className="titleGroup">
@@ -19,5 +19,5 @@ export const LandingPage = () => (
                 >Join</button>
             </Link>
         </section>
-    </body>
+    </section>
 )

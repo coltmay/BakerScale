@@ -26,7 +26,7 @@ export const NavBar = ({currentUser, setCurrentUser}) => {
         <nav>
             <ul className="">
                 <li className="">
-                    <Link className="tab logo" to="/">L O G O</Link>
+                    <Link className="tab logo" to="/">BakerScale</Link>
                 </li>
                 <li className="">
                     <Link className="tab selector" to="/recipes">R E C I P E S</Link>

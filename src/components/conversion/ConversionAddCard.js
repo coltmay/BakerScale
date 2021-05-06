@@ -42,17 +42,17 @@ export const ConversionAddCard = () => {
                 <div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="cup"></input>
+                        <input className="displayConversion" readOnly value="cup"></input>
                         <p>=</p>
                     </div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="tablespoon"></input>
+                        <input className="displayConversion" readOnly value="tablespoon"></input>
                         <p>=</p>
                     </div>
                     <div className="conversionMeasurement">
                         <p>1</p>
-                        <input className="displayConversion" value="teaspoon"></input>
+                        <input className="displayConversion" readOnly value="teaspoon"></input>
                         <p>=</p>
                     </div>
                 </div>
