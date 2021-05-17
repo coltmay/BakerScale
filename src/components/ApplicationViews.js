@@ -6,52 +6,71 @@ import { RecipeForm } from "./recipe/RecipeForm";
 import { Register } from "./auth/Register";
 import { Login } from "./auth/Login";
 import { ConversionList } from "./conversion/ConversionList";
+import { ConversionAddCard } from "./conversion/ConversionAddCard";
+import { ConversionEditCard } from "./conversion/ConversionEditCard";
 import { SearchList } from "./search/SearchList";
 import { RecipeDetail } from "./recipe/RecipeDetail";
 import { RecipeEdit } from "./recipe/RecipeEdit";
 import { About } from "./about/About";
+import { RecipeIngredientForm } from "./recipe/RecipeIngredientForm";
 
-export const ApplicationViews = () => {
+export const ApplicationViews = ({ currentUser, setCurrentUser }) => {
     return (
         <>
             <Route exact path="/">
-                <LandingPage/>
+                <LandingPage />
             </Route>
 
             <Route exact path="/recipes">
-                <RecipeList/>
+                <RecipeList />
             </Route>
 
             <Route exact path="/recipes/:recipeId(\d+)">
-                <RecipeDetail/>
+                <RecipeDetail />
             </Route>
 
-            <Route path="/recipes/add">
-                <RecipeForm/>
+            <Route exact path="/recipes/add">
+                <RecipeForm />
+            </Route>
+
+            <Route path="/recipes/add/ingredients/:recipeId(\d+)">
+                <RecipeIngredientForm />
             </Route>
 
             <Route path="/recipes/:recipeId(\d+)/edit">
-                <RecipeEdit/>
+                <RecipeEdit />
             </Route>
 
-            <Route path="/conversions">
-                <ConversionList/>
+            <Route exact path="/conversions">
+                <ConversionList />
+            </Route>
+
+            <Route path="/conversions/add">
+                <ConversionAddCard />
+            </Route>
+
+            <Route path="/conversions/:ingredientId(\d+)/edit">
+                <ConversionEditCard />
             </Route>
 
             <Route path="/about">
-                <About/>
+                <About />
             </Route>
 
             <Route path="/search">
-                <SearchList/>
+                <SearchList />
             </Route>
 
             <Route path="/login">
-                <Login/>
+                <Login
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser} />
             </Route>
 
             <Route path="/register">
-                <Register/>
+                <Register
+                    currentUser={currentUser}
+                    setCurrentUser={setCurrentUser} />
             </Route>
         </>
     )

@@ -3,7 +3,6 @@ import { useParams, useHistory } from "react-router-dom"
 import { getIngredientsByRecipe, getRecipeById, updateRecipe } from "../../modules/RecipeManager"
 import { getCurrentUser } from '../helper/helperFunctions'
 import './RecipeEdit.css'
-import { RecipeEditIngredientlist } from "./RecipeEditIngredientList"
 
 export const RecipeEdit = () => {
     const [recipe, setRecipe] = useState({})
@@ -73,11 +72,8 @@ export const RecipeEdit = () => {
                         value={recipe.blurb}
                         onChange={handleFieldChange} />
                 </div>
-                {ingredients.map(ingredient => <RecipeEditIngredientlist
-                        key={ingredient.id}
-                        ingredient={ingredient}
-                        handleFieldChange={handleFieldChange} />)}
-                <button className="ingredientAddButton">Add</button>
+                <button className="ingredientEditButton"
+                        onClick={() => history.push(`/recipes/add/ingredients/${recipeId}`)}>Edit Ingredients</button>
                 <div className="directionBox">
                 <label htmlFor="inputDirections">Directions</label>
                 <textarea className=""

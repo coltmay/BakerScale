@@ -1,7 +1,8 @@
 import React, { useRef } from "react"
 import { Link, useHistory } from "react-router-dom";
 import './Register.css'
-export const Register = ({ setAuthUser }) => {
+
+export const Register = ({ setCurrentUser }) => {
     const firstName = useRef()
     const email = useRef()
     const conflictDialog = useRef()
@@ -33,7 +34,9 @@ export const Register = ({ setAuthUser }) => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                setAuthUser(createdUser)
+                                sessionStorage.setItem("baking_user", createdUser.id)
+                                setCurrentUser(createdUser)
+                                // setAuthUser(createdUser)
                                 history.push("/")
                             }
                         })
@@ -57,9 +60,8 @@ export const Register = ({ setAuthUser }) => {
             </div>
             <section className="registerFormBin">
                 <form className="registerForm" onSubmit={handleRegister}>
-                    <label htmlFor="inputFirstName">First Name</label>
+                    <label htmlFor="inputFirstName">Name</label>
                     <input ref={firstName}
-                        placeholder="This Javascript needs to be modified."
                         className=""
                         type="text"
                         name="firstName"

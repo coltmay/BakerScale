@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     background-color: #E2DACF;
+    height: 100%;
 }
 
 .conversionHeaders {
@@ -36,6 +37,10 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 2em;
+}
+
+.addConversionRow {
+    margin-top: 2em;
 }
 
 .secondaryConversionRow {
@@ -149,4 +154,5 @@
 .editConversion {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
+    height: 26px;
 }

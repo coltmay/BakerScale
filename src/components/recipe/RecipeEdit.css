@@ -128,7 +128,7 @@
     margin-left: 2em;
 }
 
-.ingredientAddButton {
+.ingredientEditButton {
     margin-top: 2em;
     align-self: center;
     font-family: 'Open Sans', sans-serif;
@@ -137,6 +137,6 @@
     outline: none;
     border: none;
     background-color: #5A291A;
-    height: 45px;
-    width: 120px;
+    height: 55px;
+    width: 260px;
 }
