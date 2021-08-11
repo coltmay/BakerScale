@@ -9,7 +9,7 @@
     background-color: #D5CABB;
     justify-content: center;
     display: flex;
-    height: 90.85vh;
+    height: 100%;
 }
 
 .recipeAddForm {
@@ -20,6 +20,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .titleBox {
@@ -100,7 +101,7 @@
 }
 
 .addButtonBox {
-    margin-top: auto;
+    margin-top: 3em;
     padding-right: 2em;
     align-self: flex-end;
 }

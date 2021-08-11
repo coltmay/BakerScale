@@ -15,7 +15,7 @@ const CupCard = ({ ingredient }) => (
         <p className="ingredientName"><b>{ingredient.ingredient.name}</b></p>
         <div className="ingredientConvert">
             <p className="ingredientImperial"><b>{ingredient.measurementAmount}</b> cup(s)</p>
-            <p className="ingredientGrams"><b>{ingredient.measurementAmount * ingredient.ingredient.cupToGram}</b> grams</p>
+            <p className="ingredientGrams"><b>{(ingredient.measurementAmount * ingredient.ingredient.cupToGram).toFixed(2)}</b> grams</p>
         </div>
     </div>
 )
@@ -25,7 +25,7 @@ const TablespoonCard = ({ ingredient }) => (
         <p className="ingredientName"><b>{ingredient.ingredient.name}</b></p>
         <div className="ingredientConvert">
             <p className="ingredientImperial"><b>{ingredient.measurementAmount}</b> tablespoon(s)</p>
-            <p className="ingredientGrams"><b>{ingredient.measurementAmount * ingredient.ingredient.tablespoonToGram}</b> grams</p>
+            <p className="ingredientGrams"><b>{(ingredient.measurementAmount * ingredient.ingredient.tablespoonToGram).toFixed(2)}</b> grams</p>
         </div>
     </div>
 )
@@ -35,7 +35,7 @@ const TeaspoonCard = ({ ingredient }) => (
         <p className="ingredientName"><b>{ingredient.ingredient.name}</b></p>
         <div className="ingredientConvert">
             <p className="ingredientImperial"><b>{ingredient.measurementAmount}</b> teaspoon(s)</p>
-            <p className="ingredientGrams"><b>{ingredient.measurementAmount * ingredient.ingredient.teaspoonToGram}</b> grams</p>
+            <p className="ingredientGrams"><b>{(ingredient.measurementAmount * ingredient.ingredient.teaspoonToGram).toFixed(2)}</b> grams</p>
         </div>
     </div>
 )

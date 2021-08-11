@@ -19,11 +19,11 @@ export const RecipeIngredientDisplayFormCard = ({ recipeIngredientFromDB, delete
                     <label htmlFor="inputMeasurement">Measurement</label>
                     <p className="">{recipeIngredientFromDB.measurement.name}</p>
                 </div>
-                <a href='' className="recipeIngredientButtonBox">
+                <div className="recipeIngredientButtonBox">
                     <img className="recipeIngredientDeleteIcon"
                         src={deleteIcon}
                         onClick={() => deleteAndSetRecipeIngredients(recipeIngredientFromDB.id)} />
-                </a>
+                </div>
             </section>
         </>
     )
